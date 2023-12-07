@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title>Item Lister</title>
+</head>
+<style>
+    #takeInput{
+        background-color: rgb(72, 22, 171);
+    }
+</style>
+<body>
+    <div id="D">
+        <h1 id="heading">PLEASE FILL THE GIVEN FORM</h1>
+    </div>
+     <input id="mail"> <label id="saveValue">NAME</label><br>
+     <input id="age"><label>` Age`</label> <br>
+     <input id="enterPhone"><label for="">` Phone`</label><br>
+     <button id="takeInput">SUBMIT </button>
+     <div id="list">
+
+     </div>
+</body>
+<script>
+    let take_email=document.getElementById("mail");
+    let take_age=document.getElementById("age");
+    let take_phone=document.getElementById("enterphone");
+    let submit=document.getElementById("takeInput");
+
+    const usr={
+       // Name: "take_email.textContent"
+        //Age: "take_age.textContent",
+        //Phone:"take_phone.textContent"
+        Name: "User1"
+        agee: "00",
+        Phone:"123456789"
+    }
+       
+
+    submit.onclick=function(){
+        let s=JSON.stringify(usr);
+        localStorage.setItem("User",s)
+    }
+   let n= document.createElement("p")
+    let L=documnet.getElementById("list")
+    n.textContent=localStorage.getItem("Name")
+    L.appendChild(n)
+    
+
+</script>
+</html>
